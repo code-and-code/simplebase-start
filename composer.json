@@ -1,0 +1,31 @@
+{
+    "name": "codeandcode/database-start",
+    "keywords": ["start", "php", "projecto inical","project start"],
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "php": ">=5.4",
+        "codeandcode/micro-fwk": "dev-master"
+    },
+    "require-dev": {
+
+    },
+    "autoload": {
+        "psr-4": {
+            "Cac\\SimpleBase\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Code&Code",
+            "email": "contato@codeandcode.com.br"
+        },
+	{
+            "name": "Angelo Biscola",
+            "email": "angelo@codeandcode.com.br"
+        }
+		
+    ]
+} 
+    
+   
