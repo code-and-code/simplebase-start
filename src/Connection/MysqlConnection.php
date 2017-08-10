@@ -16,13 +16,10 @@ class MysqlConnection
         $this->dbPass = $dbDetails['password'];
 
         $db = "mysql:host=".$this->dbHost.";dbname=".$this->dbName.";charset=utf8";
-
         // Your Code here to connect to database //
         $options = array(
-            \PDO::ATTR_PERSISTENT    => true,
             \PDO::ATTR_ERRMODE       => \PDO::ERRMODE_EXCEPTION,
         );
-
         // Create a new PDO instanace
         $this->dbh = new \PDO($db, $this->dbUser, $this->dbPass, $options);
     }
