@@ -77,6 +77,22 @@ abstract class Mysql extends MysqlDataBase implements DataBase
             throw new ModelException($e->getMessage(),null);
         }
     }
+    
+     /**
+     * @return mixed
+     * @throws ModelException
+     */
+    public function save()
+    {
+        if(isset($this->id))
+        {
+            return $this->update($this->toArray());
+        }
+        else
+        {
+            return $this->create($this->toArray());
+        }
+    }
 
     /**
      * @param array $attributes
