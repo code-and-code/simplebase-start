@@ -84,14 +84,7 @@ abstract class Mysql extends MysqlDataBase implements DataBase
      */
     public function save()
     {
-        if(isset($this->id))
-        {
-            return $this->update($this->toArray());
-        }
-        else
-        {
-            return $this->create($this->toArray());
-        }
+        return (isset($this->id)) ? $this->update($this->toArray()) : $this->create($this->toArray());
     }
 
     /**
