@@ -53,6 +53,26 @@ abstract class Mysql extends MysqlDataBase implements DataBase
             ->bind(":" . $rad, $value);
         return $this;
     }
+    
+     /**
+     * @param $name
+     * @return $this
+     */
+    public function whereIsNull($name)
+    {
+        $this->query("SELECT * FROM {$this->table} WHERE {$name} IS NULL");
+        return $this;
+    }
+
+    /**
+     * @param $name
+     * @return $this
+     */
+    public function whereIsNotNull($name)
+    {
+        $this->query("SELECT * FROM {$this->table} WHERE {$name} IS NOT NULL");
+        return $this;
+    }
 
     /**
      * @param array $attributes
