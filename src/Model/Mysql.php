@@ -199,7 +199,7 @@ abstract class Mysql extends MysqlDataBase implements DataBase
     {
         $date = date('Y-m-d H:i:s');
         switch ($action) {
-            case 'Cac\Model\Model::update':
+            case 'Cac\SimpleBase\Model\Mysql::update':
                 $attributes['updated_at'] = $date;
                 break;
             default:
