@@ -56,6 +56,20 @@ abstract class Mysql extends MysqlDataBase implements DataBase
     
      /**
      * @param $name
+     * @param $operator
+     * @param $value
+     * @return $this
+     */
+    public function orWhere($name,$operator,$value)
+    {
+        $rad = rand(5, 15);
+        $this->query(" OR {$name} {$operator}   :{$rad}")
+            ->bind(":" . $rad, $value);
+        return $this;
+    }
+    
+     /**
+     * @param $name
      * @return $this
      */
     public function whereIsNull($name)
